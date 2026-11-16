@@ -1,4 +1,9 @@
-import {CalculatorConfig} from "./calculator_config.js";
+import {Calculator} from "./calculator.js";
+import {Decimal} from "decimal.js";
 
-const calculatorConfig = CalculatorConfig.loadConfig();
-console.log(calculatorConfig);
+function main() {
+    let calculator = new Calculator();
+    console.log(calculator.calculate(Decimal("9.56")));
+}
+
+main();

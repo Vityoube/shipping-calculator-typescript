@@ -3,6 +3,15 @@ import 'dotenv/config';
 import process from "node:process";
 
 export class CalculatorConfig {
+    public get roundingMode(): Decimal.Rounding {
+        return this._roundingMode;
+    }
+    public get rateScale(): number {
+        return this._rateScale;
+    }
+    public get rateRanges(): Map<Decimal, Decimal> {
+        return this._rateRanges;
+    }
     private _rateRanges = new Map<Decimal, Decimal>();
     private _rateScale: number = 0;
     private _roundingMode: Decimal.Rounding = Decimal.ROUND_CEIL;
